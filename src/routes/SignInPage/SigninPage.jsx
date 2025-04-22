@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './signinpage.css';
+import './signinPage.css';
 import axios from 'axios'
 import { useAuth } from '../../context/AuthContext';
 import { SyncLoader } from 'react-spinners';
