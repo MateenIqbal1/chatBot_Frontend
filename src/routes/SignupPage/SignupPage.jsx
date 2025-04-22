@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import './signuppage.css';
+import './signupPage.css';
 import {SyncLoader} from 'react-spinners'
 
 const SignupPage = () => {
