@@ -1,5 +1,5 @@
 import { IKImage } from 'imagekitio-react';
-import Upload from '../upload/upload';
+import Upload from '../upload/Upload';
 import './newPrompt.css';
 import React, { useEffect, useRef, useState } from 'react';
 import model from '../../lib/gemini';
