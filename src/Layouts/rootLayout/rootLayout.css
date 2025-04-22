@@ -1,0 +1,150 @@
+.rootLayout {
+    padding: 16px 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            gap: 8px;
+
+            img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .hamburger-menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .user {
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Profile icon and dropdown styles */
+        .profile-container {
+            position: relative;
+        }
+
+        .profile-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            color: #ffffff; /* White icon */
+        }
+
+        .profile-icon:hover {
+            opacity: 0.8;
+        }
+
+        .profile-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #1e1e1e; /* Dark background for dropdown */
+            border: 1px solid #333; /* Dark border */
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            z-index: 1000;
+            width: 200px;
+        }
+
+        .profile-dropdown p {
+            margin: 0 0 1rem 0;
+            font-size: 0.6rem;
+            color: #ffffff; /* White text */
+           
+        }
+        .profile-dropdown p .username {
+            font-weight: bold; /* Bold username */
+            font-size: 1.2rem;
+            font-family: 'Arial', sans-serif; /* Change font */
+            color: #4CAF50; /* Beautiful green color */
+        }
+        .profile-dropdown button {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #dc3545; /* Red logout button */
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .profile-dropdown button:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+
+        /* Login button styles */
+        .login-button {
+            padding: 0.5rem 1rem;
+            background-color: #007bff; /* Blue login button */
+            color: #ffffff;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    }
+
+    main {
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .rootLayout {
+        header {
+            justify-content: center;
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .logo {
+                position: relative;
+                z-index: 1;
+            }
+
+            .user {
+                right: 16px; /* Adjust position for mobile */
+            }
+
+            /* Adjust profile dropdown for mobile */
+            .profile-dropdown {
+                right: -16px; /* Adjust position for mobile */
+            }
+        }
+    }
+}

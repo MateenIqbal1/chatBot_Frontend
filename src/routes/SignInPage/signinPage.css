@@ -1,0 +1,156 @@
+.signInPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.signInContainer {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; 
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.signInHeader {
+  margin-bottom: 1.5rem;
+}
+
+.signInHeader h2 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.signInHeader p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.signInForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+}
+
+
+.formGroup {
+  position: relative;
+  width: 100%;
+}
+
+.formGroup input {
+  width: 95%; 
+  padding: 0.5rem;  
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 6px rgba(102, 126, 234, 0.3);
+  outline: none;
+}
+
+.formGroup input::placeholder {
+  color: #999;
+}
+
+.showPassword {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #667eea;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.showPassword:hover {
+  text-decoration: underline;
+}
+
+.signInButton {
+  width: 100%;
+  padding: 0.7rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signInButton:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.signInFooter {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.signInFooter a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.signInFooter a:hover {
+  color: #764ba2;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .signInContainer {
+      padding: 1.5rem;
+  }
+
+  .formGroup input {
+      width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .signInContainer {
+      max-width: 420px;
+      padding: 2.5rem;
+  }
+
+  .signInHeader h2 {
+      font-size: 2rem;
+  }
+
+  .formGroup input {
+      font-size: 1.1rem;
+  }
+
+  .signInButton {
+      font-size: 1.1rem;
+  }
+}

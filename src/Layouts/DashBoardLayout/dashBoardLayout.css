@@ -1,0 +1,63 @@
+.dashboardLayout {
+    display: flex;
+    height: 100vh; 
+    width: 100vw; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu {
+    width: 250px; 
+    background-color: #1f1d2b;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; 
+    transition: transform 0.3s ease-in-out; 
+}
+
+.content {
+    flex-grow: 1; 
+    background-color: #12101b;
+    padding: 20px;
+    min-width: 0; 
+    overflow-x: hidden;
+}
+
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; 
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        z-index: 999;
+    }
+
+    .menu.open {
+        transform: translateX(0); 
+    }
+
+    .content {
+        margin-left: 0; 
+    }
+}
