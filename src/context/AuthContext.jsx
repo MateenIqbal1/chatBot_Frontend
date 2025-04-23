@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
         return;
       }
   
-      const response = await axios.get(`${API_BASE_URL}/api/auth/check-auth`, {
+      const response = await axios.get(`${API_BASE_URL}api/auth/check-auth`, {
         headers: {
           Authorization: `Bearer ${storedToken}`,
         },
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
     setIsLoading(true); 
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/auth/login`, {
+      const response = await axios.post(`${API_BASE_URL}api/auth/login`, {
         email,
         password,
       });
@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (userName , email, password ,navigate) => {
     setIsLoading(true); 
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/auth/register`, {
+      const response = await axios.post(`${API_BASE_URL}api/auth/register`, {
        userName,
         email,
         password,
