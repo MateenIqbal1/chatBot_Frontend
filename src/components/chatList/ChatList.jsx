@@ -12,7 +12,7 @@ const ChatList = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ['userChats'],
     queryFn: () =>
-      fetch(`${import.meta.env.VITE_API_URL}api/userchats`, {
+      fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
         headers: {
           Authorization: token ? `Bearer ${token}` :'',
         },
@@ -46,7 +46,7 @@ const ChatList = () => {
       <span className="title">RECENT CHATS</span>
       <div className="list">
         {data?.map((chat) => (
-          <Link to={`dashboard/chats/${chat._id}`} key={chat._id}>
+          <Link to={`/dashboard/chats/${chat._id}`} key={chat._id}>
             {chat.title.length > 25 ? chat.title.slice(0, 25) + '...' : chat.title}
           </Link>
         ))}
