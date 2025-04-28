@@ -14,12 +14,10 @@ const ChatList = () => {
     queryFn: () =>
       fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
         headers: {
-          Authorization: token ? `Bearer ${token}` : '',
+          Authorization: token ? `Bearer ${token}` :'',
         },
       }).then((res) => res.json()),
-    enabled: !!token, 
   });
-  
 
 
   if (!isAuthenticated) {
