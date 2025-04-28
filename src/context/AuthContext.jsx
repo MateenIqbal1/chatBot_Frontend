@@ -5,7 +5,6 @@ import toast from 'react-hot-toast';
 const AuthContext = createContext();
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 
-
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
@@ -23,7 +22,7 @@ export const AuthProvider = ({ children }) => {
         return;
       }
   
-      const response = await axios.get(`${API_BASE_URL}api/auth/check-auth`, {
+      const response = await axios.get(`${API_BASE_URL}/api/auth/check-auth`, {
         headers: {
           Authorization: `Bearer ${storedToken}`,
         },
@@ -53,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     setIsLoading(true); 
 
     try {
-      const response = await axios.post(`${API_BASE_URL}api/auth/login`, {
+      const response = await axios.post(`${API_BASE_URL}/api/auth/login`, {
         email,
         password,
       });
@@ -79,7 +78,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (userName , email, password ,navigate) => {
     setIsLoading(true); 
     try {
-      const response = await axios.post(`${API_BASE_URL}api/auth/register`, {
+      const response = await axios.post(`${API_BASE_URL}/api/auth/register`, {
        userName,
         email,
         password,
@@ -103,7 +102,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post('http://localhost:3000/api/auth/logout');
+      await axios.post(`${API_BASE_URL}/api/auth/logout`);
       sessionStorage.removeItem('token'); // Remove the token from sessionStorage
       setIsAuthenticated(false);
       setUser(null);
