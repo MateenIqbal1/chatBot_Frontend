@@ -61,6 +61,7 @@ export const AuthProvider = ({ children }) => {
         sessionStorage.setItem('token', JSON.stringify(response.data.token));
         setIsAuthenticated(true);
         setUser(response.data.user);
+        await checkAuth();
         toast.success('Logged In  successful! '); 
         navigate('/'); 
       }else{
@@ -118,7 +119,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-<AuthContext.Provider value={{ isAuthenticated, user, token, isLoading, login, logout ,register}}>
+<AuthContext.Provider value={{ isAuthenticated, user, token, isLoading, login, logout ,register }}>
 {children}
     </AuthContext.Provider>
   );
