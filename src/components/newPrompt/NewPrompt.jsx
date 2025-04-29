@@ -137,7 +137,7 @@ const NewPrompt = ({ data }) => {
       <div className="endChat" ref={endRef}></div>
       <form action="" className="newForm" onSubmit={handleSubmit} ref={formRef}>
         <Upload setImg={setImg} />
-        <input id="file" type="file" multiple={false}  />
+        <input id="file" type="file" multiple={false}   hidden />
         <input type="text" name="text" placeholder="Ask anything..." />
         <button>
           <img src="/arrow.png" alt="" />
