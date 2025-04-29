@@ -69,19 +69,20 @@ const NewPrompt = ({ data }) => {
   
     try {
       const inputMessages = [];
-  
-      if (img.aiData && img.aiData.text) {
-        inputMessages.push({ text: img.aiData.text });
-      }
-  
-      inputMessages.push({ text });
+
+if (img.aiData?.inlineData) {
+  inputMessages.push({ text: "Here's an image:" });
+  inputMessages.push({ inlineData: img.aiData.inlineData });
+}
+
+inputMessages.push({ text });
+
   
       const result = await chat.sendMessageStream(inputMessages);
   
       let accumulatedText = '';
       for await (const chunk of result.stream) {
         const chunkText = chunk.text();
-        console.log(chunkText);
         accumulatedText += chunkText;
         setAnswer(accumulatedText);
       }

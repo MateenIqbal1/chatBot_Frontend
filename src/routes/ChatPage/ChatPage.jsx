@@ -15,7 +15,7 @@ const ChatPage = () => {
     queryFn: () =>
       fetch(`${import.meta.env.VITE_API_URL}/api/userchats/${chatId}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Include the token in the headers
+          Authorization: `Bearer ${token}`, 
         },
       }).then((res) => res.json()),
   });
@@ -23,7 +23,6 @@ const ChatPage = () => {
   if (!isAuthenticated) {
     return <p>Please log in to access the chat.</p>; 
   }
-console.log("this is token in chatpage",token)
   return (
     <div className="chatPage">
       <div className="wrapper">

@@ -3,14 +3,14 @@ import './homepage.css'
 import { TypeAnimation } from 'react-type-animation';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate ,Link} from 'react-router-dom';
+import { SyncLoader } from 'react-spinners';
 
 
 
 const HomePage = () => {
-  const {user,isAuthenticated} = useAuth()
+  const {user,isAuthenticated,isLoading} = useAuth()
 
-  console.log("this is user details in home screen",user)
-  console.log("this is auth status",isAuthenticated)
+
   const navigate = useNavigate();
   const handleGetStarted = () => {
     if (isAuthenticated) {
@@ -19,6 +19,13 @@ const HomePage = () => {
       navigate('/sign-in');
     }
   };
+  if(isLoading){
+    return(
+      <div>
+        <SyncLoader color="#36D7B7" />
+      </div>
+    )
+  }
   return (
     <div className='homepage'>
       <img src="/orbital.png" alt="" className='orbital' />

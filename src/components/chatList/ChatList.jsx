@@ -8,7 +8,6 @@ const ChatList = () => {
   const { isAuthenticated, token } = useAuth();
  
   
-console.log("this istoken in chatList rendering concept",token)
   const { isPending, error, data } = useQuery({
     queryKey: ['userChats'],
     queryFn: () =>
